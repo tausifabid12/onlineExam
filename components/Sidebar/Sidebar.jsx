@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Sidebar = (setCurrentQus) => {
+const Sidebar = () => {
   return (
     <div className="w-full p-3 grid grid-rows-7 h-screen gap-3">
       {/* profile and time section */}
