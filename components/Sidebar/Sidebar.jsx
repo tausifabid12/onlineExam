@@ -1,8 +1,6 @@
 import React from 'react';
-import qusData from '../../utilities/qusData';
 
 const Sidebar = (setCurrentQus) => {
-  console.log(qusData, 'thisii');
   return (
     <div className="w-full p-3 grid grid-rows-7 h-screen gap-3">
       {/* profile and time section */}
