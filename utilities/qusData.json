@@ -1,0 +1,58 @@
+[
+  {
+    "_id": 1,
+    "qusNo": 1,
+    "subject": "physics",
+    "question": "/qus1.png",
+    "questionIns": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit officiis veritatis nesciunt vero placeat voluptatum at. Ipsum, neque possimus voluptates repellat delectus aliquid temporibus asperiores ad modi, consectetur sint nulla!",
+    "options": ["One", "Two", "Three", "Four"]
+  },
+  {
+    "_id": 2,
+    "qusNo": 2,
+    "subject": "physics",
+    "question": "/qus2.png",
+    "questionIns": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit officiis veritatis nesciunt vero placeat voluptatum at. Ipsum, neque possimus voluptates repellat delectus aliquid temporibus asperiores ad modi, consectetur sint nulla!",
+    "options": ["One", "Two", "Three", "Four"]
+  },
+  {
+    "_id": 3,
+    "qusNo": 3,
+    "subject": "physics",
+    "question": "/qus3.png",
+    "questionIns": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit officiis veritatis nesciunt vero placeat voluptatum at. Ipsum, neque possimus voluptates repellat delectus aliquid temporibus asperiores ad modi, consectetur sint nulla!",
+    "options": ["One", "Two", "Three", "Four"]
+  },
+  {
+    "_id": 4,
+    "qusNo": 4,
+    "subject": "math",
+    "question": "/qus1.png",
+    "questionIns": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit officiis veritatis nesciunt vero placeat voluptatum at. Ipsum, neque possimus voluptates repellat delectus aliquid temporibus asperiores ad modi, consectetur sint nulla!",
+    "options": ["One", "Two", "Three", "Four"]
+  },
+  {
+    "_id": 5,
+    "qusNo": 5,
+    "subject": "math",
+    "question": "/qus1.png",
+    "questionIns": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit officiis veritatis nesciunt vero placeat voluptatum at. Ipsum, neque possimus voluptates repellat delectus aliquid temporibus asperiores ad modi, consectetur sint nulla!",
+    "options": ["One", "Two", "Three", "Four"]
+  },
+  {
+    "_id": 6,
+    "qusNo": 6,
+    "subject": "chemistry",
+    "question": "/qus1.png",
+    "questionIns": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit officiis veritatis nesciunt vero placeat voluptatum at. Ipsum, neque possimus voluptates repellat delectus aliquid temporibus asperiores ad modi, consectetur sint nulla!",
+    "options": ["One", "Two", "Three", "Four"]
+  },
+  {
+    "_id": 7,
+    "qusNo": 7,
+    "subject": "chemistry",
+    "question": "/qus1.png",
+    "questionIns": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit officiis veritatis nesciunt vero placeat voluptatum at. Ipsum, neque possimus voluptates repellat delectus aliquid temporibus asperiores ad modi, consectetur sint nulla!",
+    "options": ["One", "Two", "Three", "Four"]
+  }
+]

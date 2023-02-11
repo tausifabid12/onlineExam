@@ -1,11 +1,37 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import { Inter } from '@next/font/google';
 
-const inter = Inter({ subsets: ['latin'] })
+import QusContainer from '../components/QusContainer/QusContainer';
+import Sidebar from '../components/Sidebar/Sidebar';
+import qusData from '../utilities/qusData';
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
-export default function Home() {
+const inter = Inter({ subsets: ['latin'] });
+
+function Home() {
+  const [currentQus, setCurrentQus] = useState(1);
+  const [currentQusData, setCurrentQusData] = useState('');
+
+  useEffect(() => {
+    const currentQusData = qusData.find((q) => q?.qusNo === currentQus);
+
+    setCurrentQusData(currentQusData);
+  }, [currentQus, qusData]);
+
+  if (currentQus > qusData.length) {
+    return (
+      <div className="grid place-content-center h-screen text-white  font-semibold">
+        <h2>You have viewed all Questions</h2>
+        <button
+          onClick={() => setCurrentQus(1)}
+          className="px-6 py-2 bg-blue-500 rounded-lg capitalize"
+        >
+          GO to Question 1
+        </button>
+      </div>
+    );
+  }
   return (
     <>
       <Head>
@@ -14,110 +40,56 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>pages/index.js</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
+      <main className="">
+        <h2 className="text-center py-5 bg-blue-500 text-2xl font-bold text-white">
+          Online Exam
+        </h2>
+        <div className="grid grid-cols-5">
+          <div className="col-span-4">
+            {/* section buttons end */}
+            <div className="flex overflow-x-auto py-4 px-4 space-x-4">
+              <button className="py-1 w-40  bg-blue-500 text-white font-semibold rounded-lg">
+                All Sections
+              </button>
+              <button className="py-1 w-40  bg-blue-500 text-white font-semibold rounded-lg">
+                Physics
+              </button>
+              <button className="py-1 w-40 bg-blue-500 text-white font-semibold rounded-lg">
+                Chemistry
+              </button>
+              <button className="py-1 w-40 bg-blue-500 text-white font-semibold rounded-lg">
+                Math
+              </button>
+            </div>
+            {/* qus and instruction section */}
+            <QusContainer currentQusData={currentQusData} />
           </div>
+          {/* side bar  */}
+          <Sidebar setCurrentQus={setCurrentQus} />
         </div>
-
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-          <div className={styles.thirteen}>
-            <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
-            />
-          </div>
-        </div>
-
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
+        <div className="flex overflow-x-auto py-2 px-2 space-x-4">
+          <button className="py-1 w-40  bg-blue-500 text-white font-semibold rounded-lg">
+            Clear Response
+          </button>
+          <button className="py-1 w-40  bg-blue-500 text-white font-semibold rounded-lg">
+            Review
+          </button>
+          <button className="py-1 w-40  bg-blue-500 text-white font-semibold rounded-lg">
+            Dump
+          </button>
+          <button className="py-1 w-40  bg-blue-500 text-white font-semibold rounded-lg">
+            Previous
+          </button>
+          <button
+            onClick={() => setCurrentQus((prev) => prev + 1)}
+            className="py-1 w-40  bg-blue-500 text-white font-semibold rounded-lg"
           >
-            <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
+            Next
+          </button>
         </div>
       </main>
     </>
-  )
+  );
 }
+
+export default Home;
